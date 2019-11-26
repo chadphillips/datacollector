@@ -39,11 +39,7 @@ import com.streamsets.pipeline.lib.websocket.WebSocketOriginGroups;
     upgraderDef = "upgrader/WebSocketClientDSource.yaml"
 )
 @HideConfigs({
-    "conf.dataFormatConfig.jsonContent",
-    "conf.tlsConfig.keyStoreFilePath",
-    "conf.tlsConfig.keyStoreType",
-    "conf.tlsConfig.keyStorePassword",
-    "conf.tlsConfig.keyStoreAlgorithm"
+    "conf.dataFormatConfig.jsonContent"
 })
 @ConfigGroups(WebSocketOriginGroups.class)
 @GenerateResourceBundle

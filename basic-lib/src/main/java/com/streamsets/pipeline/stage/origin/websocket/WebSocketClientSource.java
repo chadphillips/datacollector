@@ -114,6 +114,15 @@ public class WebSocketClientSource implements PushSource {
       ));
     }
 
+    if (issues.isEmpty() && conf.tlsConfig.isEnabled()) {
+      conf.tlsConfig.init(
+          context,
+          Groups.TLS.name(),
+          "conf.tlsConfig.",
+          issues
+      );
+    }
+
     webSocketClient = WebSocketCommon.createWebSocketClient(conf.resourceUrl, conf.tlsConfig);
     webSocketClient.setMaxIdleTimeout(0);
 
